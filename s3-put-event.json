@@ -1,0 +1,38 @@
+{
+    "Records": [
+      {
+        "eventVersion": "2.1",
+        "eventSource": "aws:s3",
+        "awsRegion": "us-west-2",
+        "eventTime": "2021-08-05T02:33:28.559Z",
+        "eventName": "ObjectCreated:Put",
+        "userIdentity": {
+          "principalId": "A2QQX2AKF5KYRW"
+        },
+        "requestParameters": {
+          "sourceIPAddress": "73.51.219.19"
+        },
+        "responseElements": {
+          "x-amz-request-id": "E80T39W6NM01R8YM",
+          "x-amz-id-2": "TutKepLNjwQbByd6l6Tl+0uSgxceQCGjm9TI9LmAzKUEmwCV/qOAysFD1NYIJ1t1zBOCl4XZtdZeqiM1uBOBz68K9ep3ZmBp"
+        },
+        "s3": {
+          "s3SchemaVersion": "1.0",
+          "configurationId": "32d11a00-db85-417d-ade7-31cdafa54a95",
+          "bucket": {
+            "name": "jwplayer-ovation",
+            "ownerIdentity": {
+              "principalId": "A2QQX2AKF5KYRW"
+            },
+            "arn": "arn:aws:s3:::jwplayer-ovation"
+          },
+          "object": {
+            "key": "IMG_8233.HEIC",
+            "size": 302281,
+            "eTag": "23b213bfbc9c46b50b2876adb8175aec",
+            "sequencer": "00610B4DFEAACC8F49"
+          }
+        }
+      }
+    ]
+  }

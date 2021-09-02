@@ -1,0 +1,167 @@
+{
+    "media": {
+        "md": {},
+        "type":"media",
+        "dependencies": ["thumbnail_portrait", "thumbnail_landscape"],
+        "file":"${__VIDEO_FILENAME__}",
+        "payload":{
+            "upload":{
+            },
+            "metadata":{
+                "title": "${__TITLE__}",
+                "descripition": "${__LONG_DESCRIPTION__}",
+                "publish_start_date": "${__SUNRISE_DATE__}",
+                "publish_end_date": "${__SUNSET_DATE__}",
+                "tags": [
+                    "${regex=split(,+`__KEYWORDS__)}",
+                    "${regex=sub((?!\\s)([^,]+)`actor:\\1`__ACTORS__)}",
+                    "${regex=sub((?!\\s)([^,]+)`director:\\1`__DIRECTOR__)}",
+                    "${regex=sub((?!\\s)([^,]+)`category:\\1`__CATEGORY__)}",
+                    "${__GUID__}",
+                    "seriesId_${_SERIES_ID__}",
+                    "seasonNumber:${__SEASON_NUMBER__}",
+                    "episodeNumber:${__EPISODE_NUMBER__}",
+                    "rating:${__RATING__}",
+                    "locale:${__LOCALE__}"
+                ],
+                "custom_params":{
+                    "guid": "${__GUID__}",
+                    "guidType": "${__GUID_TYPE__}",
+                    "shortDescription": "${__SHORT_DESCRIPTION__}",
+                    "productionType":"${__PRODUCTION_TYPE__}",
+                    "category":"${__CATEGORY__}",
+                    "actors":"${__ACTORS__}",
+                    "director":"${__DIRECTOR__}",
+                    "seriesId":"seriesId_${__SERIES_ID__}",
+                    "seasonNumber":"${__SEASON_NUMBER__}",
+                    "episodeNumber":"${__EPISODE_NUMBER__}",
+                    "pubDate":"${__PUBLICATION_DATE__}",
+                    "cuepoints":"${__CUEPOINTS__}",
+                    "rating": "${__RATING__}",
+                    "locale": "${__LOCALE__}",
+                    "restriction_allow":"${__RESTRICTION__}",
+                    "poster_landscape_url": "https:\/\/cdn.jwplayer.com\/v2\/media\/${__thumbnail_portrait.md.id__}\/poster.jpg?width=1920",
+                    "poster_landscape_id":"${__thumbnail_portrait.id__}",
+                    "poster_portrait_url": "https:\/\/cdn.jwplayer.com\/v2\/media\/${__thumbnail_landscape.md.id__}\/poster.jpg?width=1920",
+                    "poster_portrait_id":"${__thumbnail_landscape.id__}"
+                }
+            }
+        }
+    },
+    "thumbnail":{
+        "md": {},
+        "type":"thumbnail",
+        "dependencies": ["media"],
+        "file":"${__FEATURE_THUMBNAIL__}",
+        "payload":{
+            "video_key": "${__media.md.id__}"
+        }
+    },
+    "thumbnail_portrait":{
+        "md": {},
+        "type":"media",
+        "file":"${__FEATURE_PORTRAIT_POSTER__}",
+        "payload":{
+            "upload": {
+                "method": "external",
+                "source_url": "http://www.placeholder.com/foo.mp4"
+            },
+            "metadata": {
+                "title": "",
+                "description": "",
+                "tags": [],
+                "custom_params":{
+                    
+                }
+            }
+        }
+    },
+    "thumbnail_landscape":{
+        "md": {},
+        "type":"media",
+        "file":"${__FEATURE_PORTRAIT_LANDSCAPE__}",
+        "payload":{
+            "upload": {
+                "method": "external",
+                "source_url": "http://www.placeholder.com/foo.mp4"
+            },
+            "metadata": {
+                "title": "",
+                "description": "",
+                "tags": [],
+                "custom_params":{
+                    
+                }
+            }
+        }
+    },
+    "series_portrait":{
+        "md": {},
+        "type":"media",
+        "file":"${__SERIES_PORTRAIT_POSTER__}",
+        "payload":{
+            "upload": {
+                "method": "external",
+                "source_url": "http://www.placeholder.com/foo.mp4"
+            },
+            "metadata": {
+                "title": "",
+                "description": "",
+                "tags": [],
+                "custom_params":{
+                    
+                }
+            }
+        }
+    },
+    "series_landscape":{
+        "md": {},
+        "type":"media",
+        "file":"${__SERIES_LANDSCAPE_POSTER__}",
+        "payload":{
+            "upload": {
+                "method": "external",
+                "source_url": "http://www.placeholder.com/foo.mp4"
+            },
+            "metadata": {
+                "title": "",
+                "description": "",
+                "tags": [],
+                "custom_params":{
+                    
+                }
+            }
+        }
+    },
+    "series":{
+        "md": {},
+        "type":"media",
+        "dependencies": ["series_portrait", "series_landscape"],
+        "file":"${__SERIES_THUMBNAIL__}",
+        "payload":{
+            "upload":{
+            },
+            "metadata":{
+                "custom_params":{
+                    "title": "",
+                    "description": "",
+                    "tags": [],
+                    "poster_landscape_url": "https:\/\/cdn.jwplayer.com\/v2\/media\/${__series_portrait.md.id__}\/poster.jpg?width=1920",
+                    "poster_landscape_id":"${__series_portrait.md.id__}",
+                    "poster_portrait_url": "https:\/\/cdn.jwplayer.com\/v2\/media\/${__series_landscape.md.id__}\/poster.jpg?width=1920",
+                    "poster_portrait_id":"${__series_lansdcape.md.id__}"
+                }
+            }
+        }
+    },
+    "subtitle":{
+        "md": {},
+        "type":"track",
+        "dependencies": ["media"],
+        "file":"${__SUBTITLE_FILENAME__}",
+        "payload":{
+            "upload": {},
+            "metadata": {}
+        }
+    }
+}
