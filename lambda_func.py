@@ -103,7 +103,7 @@ def call_endpoints(data):
             pass
 
 def lambda_function():
-    key_file = load_local_csv_file("./vizio-avod.csv")
+    key_file = load_local_csv_file("./key.csv")
     payloads = get_jw_mapping('./payloads.json')
 
     exp_regex = r"(\${.*?})"
